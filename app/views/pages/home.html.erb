@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Raquel Grund Wagner, advogada trabalhista especialista em BPC/LOAS, Auxílio-Doença e Aposentadoria. Conquiste seus direitos agora!">
+    <meta name="keywords" content="advogada trabalhista, BPC LOAS, auxílio-doença, aposentadoria, isenção imposto de renda">
+    <title>Raquel Grund Wagner - Advogada Especialista em BPC/LOAS e Benefícios do INSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        h2 {
+            font-size: 20px;
+            color: #3498db;
+        }
+        .cta-button {
+            background-color: #27ae60;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 10px 0;
+        }
+        .cta-button:hover {
+            background-color: #219653;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .areas {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .area-item {
+            width: 30%;
+            margin: 10px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        @media (max-width: 600px) {
+            .area-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Raquel Grund Wagner</h1>
+            <p>Advogada Especialista em BPC/LOAS e Benefícios do INSS</p>
+            <a href="https://wa.me/5511999999999" class="cta-button" target="_blank">Fale comigo no WhatsApp</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Sobre Mim -->
+        <div class="section">
+            <h2>Quem Sou Eu</h2>
+            <p>Sou Raquel Grund Wagner, advogada trabalhista dedicada a ajudar você a conquistar benefícios como BPC/LOAS, Auxílio-Doença, Auxílio-Acidente, Isenção de Imposto de Renda e Aposentadoria. Com anos de experiência, simplifico o processo para garantir o que é seu por direito.</p>
+        </div>
+
+        <!-- Áreas de Atuação -->
+        <div class="section">
+            <h2>Áreas de Atuação</h2>
+            <div class="areas">
+                <div class="area-item">
+                    <h3>BPC/LOAS</h3>
+                    <p>Ajudo idosos e pessoas com deficiência a conseguirem esse benefício essencial.</p>
+                </div>
+                <div class="area-item">
+                    <h3>Auxílio-Doença</h3>
+                    <p>Suporte para quem precisa se afastar do trabalho por saúde.</p>
+                </div>
+                <div class="area-item">
+                    <h3>Aposentadoria</h3>
+                    <p>Orientação para aposentadoria por invalidez ou tempo de contribuição.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Depoimentos -->
+        <div class="section">
+            <h2>O que Dizem Meus Clientes</h2>
+            <p>"Raquel resolveu meu Auxílio-Doença em 3 meses! Super recomendo!" - Maria S.</p>
+        </div>
+
+        <!-- Formulário -->
+        <div class="section">
+            <h2>Entre em Contato</h2>
+            <%= form_with url: "/contato", method: :post, local: true do %>
+                <input type="text" name="nome" placeholder="Seu Nome" required>
+                <input type="tel" name="telefone" placeholder="Seu Telefone" required>
+                <textarea name="mensagem" placeholder="Qual benefício você busca?" rows="4"></textarea>
+                <button type="submit">Enviar</button>
+            <% end %>
+        </div>
+
+        <!-- Rodapé -->
+        <div class="section">
+            <a href="https://wa.me/5511999999999" class="cta-button" target="_blank">Fale comigo agora!</a>
+            <p>© 2025 Raquel Grund Wagner - Advogada Trabalhista</p>
+        </div>
+    </div>
+</body>
+</html>
