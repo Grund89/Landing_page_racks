@@ -8,7 +8,7 @@
     <title>Raquel Grund Wagner - Advogada Especialista em BPC/LOAS e Benefícios do INSS</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Open Sans', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
@@ -27,11 +27,13 @@
         }
         h1 {
             margin: 0;
+            font-family: 'Lora', serif;
             font-size: 28px;
         }
         h2 {
             font-size: 20px;
             color: #3498db;
+            font-family: 'Lora', serif;
         }
         .cta-button {
             background-color: #27ae60;
@@ -41,6 +43,7 @@
             border-radius: 5px;
             display: inline-block;
             margin: 10px 0;
+            font-family: 'Open Sans', sans-serif;
         }
         .cta-button:hover {
             background-color: #219653;
@@ -81,51 +84,28 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-family: 'Open Sans', sans-serif;
         }
         button:hover {
             background-color: #2980b9;
         }
-        .banner {
-            background-color: #3498db;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        .section a {
-            color: #3498db;
-            text-decoration: none;
-        }
-
-        .section a:hover {
-            text-decoration: underline;
-        }
-        
         @media (max-width: 600px) {
             .area-item {
                 width: 100%;
             }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="container">
             <h1>Raquel Grund Wagner</h1>
             <p>Advogada Especialista em BPC/LOAS e Benefícios do INSS</p>
-            <a href="https://wa.me/5551995408389" class="cta-button" target="_blank">Fale comigo agora no WhatsApp</a>
+            <a href="https://wa.me/5511999999999" class="cta-button" target="_blank">Fale comigo no WhatsApp</a>
+            <a href="/articles" class="cta-button" style="background-color: #e67e22;">Leia Meu Blog</a>
         </div>
-        <a href="/articles" class="cta-button" style="background-color: #e67e22;">Leia Meu Blog</a>
     </header>
-
-    <!-- Banner -->
-    <div class="banner" style="background-color: #3498db; color: white; padding: 40px 20px; text-align: center;">
-        <div class="container">
-            <h2 style="font-size: 24px; margin: 0;">Seu direito ao Auxílio-Doença começa aqui!</h2>
-            <p style="font-size: 18px;">Conquiste seus benefícios com a Dra. Raquel Grund Wagner</p>
-            <%= image_tag "raquel.jpg", alt: "Dra. Raquel Grund Wagner", style: "width: 200px; border-radius: 50%; margin-top: 20px;" %>
-        </div>
-    </div>
 
     <div class="container">
         <!-- Sobre Mim -->

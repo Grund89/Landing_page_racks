@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def home
+    @article = Article.last
     # Renderiza a página home.html.erb
   end
 

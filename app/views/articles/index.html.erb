@@ -1,11 +1,126 @@
 <div class="container">
-  <h1>Blog da Dra. Raquel</h1>
-  <p>Confira dicas e guias sobre seus direitos trabalhistas e previdenciários.</p>
+  <div class="blog-header">
+    <%= link_to "Voltar para o início", root_path, class: "back-home-link" %>
+  </div>
+
+  <h1 class="blog-title">Blog da Dra. Raquel</h1>
+  <p class="blog-subtitle">Confira dicas e guias sobre seus direitos trabalhistas e previdenciários.</p>
 
   <% @articles.each do |article| %>
-    <div class="section">
-      <h2><%= link_to article.title, article_path(article) %></h2>
-      <p><%= article.content.truncate(150) %>...</p>
+    <div class="article-card">
+      <h2><%= link_to article.title, article_path(article), class: "article-title" %></h2>
+      <p class="article-excerpt"><%= article.content.truncate(150) %>...</p>
+      <p class="article-date">Publicado em: <%= article.created_at.strftime("%d/%m/%Y") %></p>
     </div>
   <% end %>
 </div>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+
+  .blog-header {
+    text-align: right;
+    margin-bottom: 20px;
+  }
+
+  .back-home-link {
+    color: #2c3e50;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 8px 15px;
+    border: 1px solid #2c3e50;
+    border-radius: 5px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+
+  .back-home-link:hover {
+    background-color: #2c3e50;
+    color: white;
+  }
+
+  .blog-title {
+    color: #2c3e50;
+    font-family: 'Lora', serif;
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .blog-subtitle {
+    color: #7f8c8d;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .article-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .article-title {
+    color: #2c3e50;
+    font-family: 'Lora', serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-decoration: none;
+  }
+
+  .article-title:hover {
+    color: #d4a017;
+  }
+
+  .article-excerpt {
+    color: #7f8c8d;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  .article-date {
+    color: #95a5a6;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  @media (max-width: 600px) {
+    .container {
+      padding: 20px 10px;
+    }
+
+    .blog-title {
+      font-size: 24px;
+    }
+
+    .article-title {
+      font-size: 20px;
+    }
+
+    .blog-header {
+      text-align: center;
+    }
+  }
+</style>
+
+<link href="https://fonts.googleapis.com/css2?family=Lora&family=Open+Sans&display=swap" rel="stylesheet">
