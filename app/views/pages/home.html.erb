@@ -105,6 +105,7 @@
             <p>Advogada Especialista em BPC/LOAS e Benefícios do INSS</p>
             <a href="https://wa.me/5551995408389" class="cta-button" target="_blank">Fale comigo agora no WhatsApp</a>
         </div>
+        <a href="/articles" class="cta-button" style="background-color: #e67e22;">Leia Meu Blog</a>
     </header>
 
     <!-- Banner -->
@@ -151,4 +152,19 @@
         <!-- Formulário -->
         <div class="section">
             <h2>Entre em Contato</h2>
-            <%= f
+            <%= form_with url: "/contato", method: :post, local: true do %>
+                <input type="text" name="nome" placeholder="Seu Nome" required>
+                <input type="tel" name="telefone" placeholder="Seu Telefone" required>
+                <textarea name="mensagem" placeholder="Qual benefício você busca?" rows="4"></textarea>
+                <button type="submit">Enviar</button>
+            <% end %>
+        </div>
+
+        <!-- Rodapé -->
+        <div class="section">
+            <a href="https://wa.me/5511999999999" class="cta-button" target="_blank">Fale comigo agora!</a>
+            <p>© 2025 Raquel Grund Wagner - Advogada Trabalhista</p>
+        </div>
+    </div>
+</body>
+</html>
