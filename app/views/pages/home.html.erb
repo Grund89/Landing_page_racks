@@ -64,6 +64,68 @@
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
+        .testimonials {
+            margin: 40px 0;
+            position: relative;
+        }
+        .testimonial-carousel {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+        }
+        .testimonial-slide {
+            display: none;
+            background-color: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: slideIn 0.5s ease-in-out;
+        }
+        .testimonial-slide.active {
+            display: block;
+        }
+        .testimonial-quote {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-bottom: 15px;
+            font-size: 16px;
+            line-height: 1.6;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .testimonial-author {
+            color: #2c3e50;
+            font-weight: bold;
+            font-family: 'Lora', serif;
+            font-size: 18px;
+        }
+        .carousel-dots {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .dot {
+            height: 12px;
+            width: 12px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .dot.active {
+            background-color: #d4a017;
+        }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
         form {
             background-color: white;
             padding: 20px;
@@ -93,8 +155,36 @@
             .area-item {
                 width: 100%;
             }
+            .testimonial-slide {
+                padding: 15px;
+            }
         }
     </style>
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("testimonial-slide");
+            let dots = document.getElementsByClassName("dot");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            setTimeout(showSlides, 5000); // Troca a cada 5 segundos
+        }
+
+        function currentSlide(n) {
+            slideIndex = n;
+            showSlides();
+        }
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Lora&family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -133,10 +223,33 @@
             </div>
         </div>
 
-        <!-- Depoimentos -->
-        <div class="section">
+        <!-- Depoimentos (Carrossel) -->
+        <div class="testimonials">
             <h2>O que Dizem Meus Clientes</h2>
-            <p>"Raquel resolveu meu Auxílio-Doença em 3 meses! Super recomendo!" - Maria S.</p>
+            <div class="testimonial-carousel">
+                <div class="testimonial-slide active">
+                    <p class="testimonial-quote">"Raquel resolveu meu Auxílio-Doença em 3 meses! Super recomendo!"</p>
+                    <p class="testimonial-author">Maria S., Assistente Administrativa</p>
+                </div>
+                <div class="testimonial-slide">
+                    <p class="testimonial-quote">"Com a ajuda da Dra. Raquel, consegui minha aposentadoria por invalidez rapidamente."</p>
+                    <p class="testimonial-author">João P., Motorista</p>
+                </div>
+                <div class="testimonial-slide">
+                    <p class="testimonial-quote">"Profissional excepcional, me orientou perfeitamente sobre o BPC/LOAS."</p>
+                    <p class="testimonial-author">Ana L., Professora</p>
+                </div>
+                <div class="testimonial-slide">
+                    <p class="testimonial-quote">"Atendimento impecável e resultados incríveis no meu caso de Auxílio-Acidente."</p>
+                    <p class="testimonial-author">Carlos R., Operário</p>
+                </div>
+            </div>
+            <div class="carousel-dots">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
         </div>
 
         <!-- Formulário -->
