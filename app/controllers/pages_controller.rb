@@ -15,4 +15,6 @@ class PagesController < ApplicationController
 
     # Redireciona com mensagem de sucesso
     flash[:notice] = "Obrigada pelo contato! Entrarei em contato em breve."
-    redi
+    redirect_to root_path
+  end
+end
