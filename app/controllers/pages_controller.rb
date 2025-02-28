@@ -17,4 +17,10 @@ class PagesController < ApplicationController
     redirect_to root_path
   end
 
-  d
+  def guia
+    email = params[:email]
+    puts "E-mail capturado: #{email}" # Aqui você pode salvar ou enviar o guia
+    flash[:notice] = "Guia enviado para seu e-mail! Verifique sua caixa de entrada."
+    redirect_to root_path
+  end
+end
