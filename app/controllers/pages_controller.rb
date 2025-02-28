@@ -1,6 +1,5 @@
 class PagesController < ApplicationController
   def home
-    @article = Article.last
     # Renderiza a página home.html.erb
   end
 
@@ -17,4 +16,5 @@ class PagesController < ApplicationController
     flash[:notice] = "Obrigada pelo contato! Entrarei em contato em breve."
     redirect_to root_path
   end
-end
+
+  d

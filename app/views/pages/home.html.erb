@@ -3,66 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Raquel Grund Wagner, advogada trabalhista especialista em BPC/LOAS, Auxílio-Doença e Aposentadoria. Conquiste seus direitos agora!">
-    <meta name="keywords" content="advogada trabalhista, BPC LOAS, auxílio-doença, aposentadoria, isenção imposto de renda">
-    <title>Raquel Grund Wagner - Advogada Especialista em BPC/LOAS e Benefícios do INSS</title>
+    <meta name="description" content="Raquel Grund Wagner, advogada trabalhista em Porto Alegre especialista em BPC/LOAS, Auxílio-Doença e Aposentadoria. Conquiste seus direitos agora!">
+    <meta name="keywords" content="advogada trabalhista Porto Alegre, BPC LOAS Porto Alegre, auxílio-doença, aposentadoria, isenção imposto de renda">
+    <title>Raquel Grund Wagner - Advogada Trabalhista em Porto Alegre</title>
     <style>
         body {
             font-family: 'Open Sans', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f8e8e4; /* Gradiente claro estilo pêssego/rosa pastel */
             color: #333;
+            line-height: 1.6;
+        }
+        .navbar {
+            background-color: #2c3e50;
+            padding: 15px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1001;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            height: 50px; /* Aumentei para melhor visibilidade, ajuste conforme necessário */
+            width: auto;
+            margin-left: -10px; /* Ajuste fino para alinhar com o canto esquerdo */
+        }
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-item {
+            margin-left: 20px;
+        }
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #d4a017;
         }
         .container {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 120px 20px 20px; /* Ajuste para evitar overlap com o navbar fixo */
             text-align: center;
         }
-        header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 20px;
+        .hero {
+            background-color: #fff;
+            padding: 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
         }
-        h1 {
-            margin: 0;
+        .hero h1 {
+            color: #2c3e50;
             font-family: 'Lora', serif;
-            font-size: 28px;
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: bold;
         }
-        h2 {
-            font-size: 20px;
-            color: #3498db;
-            font-family: 'Lora', serif;
+        .hero p {
+            color: #666;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 800px;
+        }
+        .hero-image {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
         }
         .cta-button {
             background-color: #27ae60;
             color: white;
-            padding: 15px 30px;
+            padding: 12px 25px;
             text-decoration: none;
-            border-radius: 5px;
-            display: inline-block;
-            margin: 10px 0;
+            border-radius: 8px;
             font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
         .cta-button:hover {
             background-color: #219653;
         }
+        .blog-button {
+            background-color: #e67e22;
+        }
+        .blog-button:hover {
+            background-color: #d35400;
+        }
         .section {
             margin: 40px 0;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         .areas {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
+            gap: 20px;
         }
         .area-item {
             width: 30%;
-            margin: 10px;
-            background-color: white;
+            margin: 10px 0;
+            background-color: #f9f9f9;
             padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .area-item:hover {
+            transform: translateY(-5px);
+        }
+        .area-item h3 {
+            color: #2c3e50;
+            font-family: 'Lora', serif;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .area-item p {
+            color: #333;
+            font-size: 16px;
+            font-family: 'Open Sans', sans-serif;
         }
         .testimonials {
             margin: 40px 0;
@@ -75,8 +169,8 @@
         }
         .testimonial-slide {
             display: none;
-            background-color: white;
-            padding: 20px;
+            background-color: #f9f9f9;
+            padding: 25px;
             margin: 15px 0;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -129,7 +223,7 @@
         form {
             background-color: white;
             padding: 20px;
-            border-radius: 5px;
+            border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         input, textarea {
@@ -138,6 +232,7 @@
             margin: 10px 0;
             border: 1px solid #ddd;
             border-radius: 5px;
+            font-family: 'Open Sans', sans-serif;
         }
         button {
             background-color: #3498db;
@@ -151,12 +246,102 @@
         button:hover {
             background-color: #2980b9;
         }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            width: 90%;
+            max-width: 500px;
+        }
+        .popup-content {
+            text-align: center;
+        }
+        .popup-content h3 {
+            color: #2c3e50;
+            font-family: 'Lora', serif;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        .popup-content p {
+            color: #333;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .popup-form {
+            margin-top: 20px;
+        }
+        .popup-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .popup-form button {
+            background-color: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+        }
+        .popup-form button:hover {
+            background-color: #219653;
+        }
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
         @media (max-width: 600px) {
             .area-item {
                 width: 100%;
             }
             .testimonial-slide {
                 padding: 15px;
+            }
+            .navbar-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .nav-menu {
+                margin-top: 10px;
+                justify-content: center;
+            }
+            .nav-item {
+                margin: 0 10px;
+            }
+            .hero {
+                padding: 20px 10px;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
+            .hero p {
+                font-size: 16px;
+            }
+            .container {
+                padding: 100px 10px 20px; /* Ajuste para mobile */
+            }
+            .logo {
+                height: 40px; /* Reduz tamanho no mobile */
+                margin-left: 0; /* Remove ajuste fino no mobile */
             }
         }
     </style>
@@ -184,68 +369,146 @@
             slideIndex = n;
             showSlides();
         }
+
+        // Pop-up para captação de leads
+        window.onload = function() {
+            setTimeout(function() {
+                const popup = document.getElementById('popup');
+                const overlay = document.getElementById('popup-overlay');
+                if (popup && overlay) {
+                    popup.style.display = 'block';
+                    overlay.style.display = 'block';
+                }
+            }, 5000); // Aparece após 5 segundos
+        };
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('popup-overlay').style.display = 'none';
+        }
+
+        // Função para rolar suavemente até a seção
+        function smoothScroll(target, duration) {
+            const start = window.pageYOffset;
+            const distance = target.getBoundingClientRect().top - 80; // Ajuste para o navbar fixo
+            let startTime = null;
+
+            function animation(currentTime) {
+                if (startTime === null) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const run = ease(timeElapsed, start, distance, duration);
+                window.scrollTo(0, run);
+                if (timeElapsed < duration) requestAnimationFrame(animation);
+            }
+
+            // Função de easing para movimento suave
+            function ease(t, b, c, d) {
+                t /= d / 2;
+                if (t < 1) return c / 2 * t * t + b;
+                t--;
+                return -c / 2 * (t * (t - 2) - 1) + b;
+            }
+
+            requestAnimationFrame(animation);
+        }
+
+        // Adicionar evento de clique para o link "Depoimentos"
+        document.addEventListener('DOMContentLoaded', () => {
+            const depoimentosLink = document.querySelector('a[href="#depoimentos"]');
+            if (depoimentosLink) {
+                depoimentosLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const target = document.getElementById('depoimentos');
+                    if (target) {
+                        smoothScroll(target, 1000); // Rolagem suave por 1 segundo
+                    }
+                });
+            }
+        });
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Lora&family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Raquel Grund Wagner</h1>
-            <p>Advogada Especialista em BPC/LOAS e Benefícios do INSS</p>
-            <a href="https://wa.me/5511999999999" class="cta-button" target="_blank">Fale comigo no WhatsApp</a>
-            <a href="/articles" class="cta-button" style="background-color: #e67e22;">Leia Meu Blog</a>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <%= image_tag "logo.png", alt: "Raquel Grund Wagner", class: "logo", fallback: image_tag("default_logo.png") %>
+            <ul class="nav-menu">
+                <li class="nav-item"><%= link_to "Home", root_path, class: "nav-link #{'active' if current_page?(root_path)}" %></li>
+                <li class="nav-item"><%= link_to "Sobre", "#sobre", class: "nav-link" %></li>
+                <li class="nav-item"><%= link_to "Depoimentos", "#depoimentos", class: "nav-link" %></li>
+                <li class="nav-item"><%= link_to "Blog", articles_path, class: "nav-link" %></li>
+                <li class="nav-item"><%= link_to "Contato", "#contato", class: "nav-link" %></li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
     <div class="container">
+        <div class="hero">
+            <%= image_tag "logo.png", alt: "Raquel Grund Wagner", class: "logo", style: "display: none;" %> <!-- Logo oculto para SEO -->
+            <h1>NÃO PERMITA QUE AS CONSEQUÊNCIAS DE UM ACIDENTE DE TRABALHO OU DE UMA DOENÇA RELACIONADA COMPROMETAM O SEU <strong>SUSTENTO</strong>!</h1>
+            <p>Nossos advogados especializados em acidentes de trabalho e doenças ocupacionais estão prontos para lutar pelos seus direitos e garantir que você receba a compensação que merece. Mais de 10 anos de experiência em ajudar pessoas a conseguirem o auxílio-acidente de trabalho e auxílio doença.</p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/5551995408389?text=Olá,%20preciso%20de%20uma%20advogada%20especialista%20em%20direito%20previdenciário!" class="cta-button" target="_blank">
+                    <svg class="e-font-icon-svg e-fab-whatsapp" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path></svg>
+                    Quero ajuda especializada
+                </a>
+                <a href="/articles" class="cta-button blog-button">Leia Meu Blog</a>
+            </div>
+            <% if File.exist?(Rails.root.join('app', 'assets', 'images', 'raquel_hero.jpg')) %>
+                <%= image_tag "raquel_hero.jpg", alt: "Dra. Raquel Grund Wagner", class: "hero-image" %>
+            <% else %>
+                <%= image_tag "placeholder.jpg", alt: "Placeholder Dra. Raquel", class: "hero-image" %>
+            <% end %>
+        </div>
+
         <!-- Sobre Mim -->
-        <div class="section">
+        <div class="section" id="sobre">
             <h2>Quem Sou Eu</h2>
-            <p>Sou Raquel Grund Wagner, advogada trabalhista dedicada a ajudar você a conquistar benefícios como BPC/LOAS, Auxílio-Doença, Auxílio-Acidente, Isenção de Imposto de Renda e Aposentadoria. Com anos de experiência, simplifico o processo para garantir o que é seu por direito.</p>
+            <p>Sou Raquel Grund Wagner, advogada trabalhista em Porto Alegre dedicada a ajudar você a conquistar benefícios como BPC/LOAS, Auxílio-Doença, Auxílio-Acidente, Isenção de Imposto de Renda e Aposentadoria. Com anos de experiência, simplifico o processo para garantir o que é seu por direito na região de Porto Alegre.</p>
         </div>
 
         <!-- Áreas de Atuação -->
-        <div class="section">
-            <h2>Áreas de Atuação</h2>
+        <div class="section" id="areas">
+            <h2>Áreas de Atuação em Porto Alegre</h2>
             <div class="areas">
                 <div class="area-item">
-                    <h3>BPC/LOAS</h3>
-                    <p>Ajudo idosos e pessoas com deficiência a conseguirem esse benefício essencial.</p>
+                    <h3>BPC/LOAS em Porto Alegre</h3>
+                    <p>Ajudo idosos e pessoas com deficiência em Porto Alegre a conseguirem esse benefício essencial.</p>
                 </div>
                 <div class="area-item">
-                    <h3>Auxílio-Doença</h3>
-                    <p>Suporte para quem precisa se afastar do trabalho por saúde.</p>
+                    <h3>Auxílio-Doença em Porto Alegre</h3>
+                    <p>Suporte para quem precisa se afastar do trabalho por saúde na região de Porto Alegre.</p>
                 </div>
                 <div class="area-item">
-                    <h3>Aposentadoria</h3>
-                    <p>Orientação para aposentadoria por invalidez ou tempo de contribuição.</p>
+                    <h3>Aposentadoria em Porto Alegre</h3>
+                    <p>Orientação para aposentadoria por invalidez ou tempo de contribuição em Porto Alegre.</p>
                 </div>
             </div>
         </div>
 
         <!-- Depoimentos (Carrossel) -->
-        <div class="testimonials">
-            <h2>O que Dizem Meus Clientes</h2>
+        <div class="testimonials" id="depoimentos">
+            <h2>O que Dizem Meus Clientes em Porto Alegre</h2>
             <div class="testimonial-carousel">
                 <div class="testimonial-slide active">
                     <p class="testimonial-quote">"Raquel resolveu meu Auxílio-Doença em 3 meses! Super recomendo!"</p>
-                    <p class="testimonial-author">Maria S., Assistente Administrativa</p>
+                    <p class="testimonial-author">Maria S., Assistente Administrativa, Porto Alegre</p>
                 </div>
                 <div class="testimonial-slide">
                     <p class="testimonial-quote">"Com a ajuda da Dra. Raquel, consegui minha aposentadoria por invalidez rapidamente."</p>
-                    <p class="testimonial-author">João P., Motorista</p>
+                    <p class="testimonial-author">João P., Motorista, Porto Alegre</p>
                 </div>
                 <div class="testimonial-slide">
-                    <p class="testimonial-quote">"Profissional excepcional, me orientou perfeitamente sobre o BPC/LOAS."</p>
-                    <p class="testimonial-author">Ana L., Professora</p>
+                    <p class="testimonial-quote">"Profissional excepcional, me orientou perfeitamente sobre o BPC/LOAS em Porto Alegre."</p>
+                    <p class="testimonial-author">Ana L., Professora, Porto Alegre</p>
                 </div>
                 <div class="testimonial-slide">
-                    <p class="testimonial-quote">"Atendimento impecável e resultados incríveis no meu caso de Auxílio-Acidente."</p>
-                    <p class="testimonial-author">Carlos R., Operário</p>
+                    <p class="testimonial-quote">"Atendimento impecável e resultados incríveis no meu caso de Auxílio-Acidente em Porto Alegre."</p>
+                    <p class="testimonial-author">Carlos R., Operário, Porto Alegre</p>
                 </div>
                 <div class="testimonial-slide">
                     <p class="testimonial-quote">"Conseguiu me aposentar de primeira!! Excelente Profissional!! Atenciosa, comprometida com os seus clientes!"</p>
-                    <p class="testimonial-author">Eliana G., Aposentada</p>
+                    <p class="testimonial-author">Eliana G., Aposentada, Porto Alegre</p>
                 </div>
             </div>
             <div class="carousel-dots">
@@ -258,20 +521,34 @@
         </div>
 
         <!-- Formulário -->
-        <div class="section">
-            <h2>Entre em Contato</h2>
+        <div class="section" id="contato">
+            <h2>Entre em Contato em Porto Alegre</h2>
             <%= form_with url: "/contato", method: :post, local: true do %>
                 <input type="text" name="nome" placeholder="Seu Nome" required>
                 <input type="tel" name="telefone" placeholder="Seu Telefone" required>
-                <textarea name="mensagem" placeholder="Qual benefício você busca?" rows="4"></textarea>
+                <textarea name="mensagem" placeholder="Qual benefício você busca em Porto Alegre?" rows="4"></textarea>
                 <button type="submit">Enviar</button>
             <% end %>
         </div>
 
         <!-- Rodapé -->
         <div class="section">
-            <a href="https://wa.me/5511999999999" class="cta-button" target="_blank">Fale comigo agora!</a>
+            <a href="https://wa.me/5551995408389" class="cta-button" target="_blank">Fale comigo agora em Porto Alegre!</a>
             <p>© 2025 Raquel Grund Wagner - Advogada Trabalhista em Porto Alegre</p>
+        </div>
+    </div>
+
+    <!-- Pop-up para Captação de Leads -->
+    <div id="popup-overlay" class="popup-overlay"></div>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <h3>Baixe Meu Guia Grátis!</h3>
+            <p>Receba o "Checklist para o Auxílio-Doença" e descubra como garantir seus direitos em Porto Alegre.</p>
+            <%= form_with url: "/guia", method: :post, local: true, class: "popup-form" do %>
+                <input type="email" name="email" placeholder="Seu E-mail" required>
+                <button type="submit">Quero o Guia!</button>
+            <% end %>
+            <button onclick="closePopup()" style="background: none; border: none; color: #d4a017; cursor: pointer; font-size: 14px; margin-top: 10px;">Fechar</button>
         </div>
     </div>
 </body>

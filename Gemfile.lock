@@ -389,7 +389,4 @@ DEPENDENCIES
   thruster
   turbo-rails
   tzinfo-data
-  web-console
-
-BUNDLED WITH
-   2.5.19
+  we
