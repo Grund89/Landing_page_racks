@@ -142,18 +142,19 @@
         }
         .areas {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             flex-wrap: wrap;
             gap: 20px;
         }
         .area-item {
-            width: 30%;
+            width: 38%; /* 2 itens por linha, com espaço entre eles */
             margin: 10px 0;
-            background-color: #f9f9f9;
+            background-color: #fff;
             padding: 15px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
+            text-align: center; /* Centraliza o texto dentro de cada item */
         }
         .area-item:hover {
             transform: translateY(-5px);
@@ -168,6 +169,7 @@
             color: #333;
             font-size: 16px;
             font-family: 'Open Sans', sans-serif;
+            margin: 0;
         }
         .testimonials {
             margin: 40px 0;
@@ -604,18 +606,22 @@
 
         <!-- Áreas de Atuação -->
         <div class="section" id="areas">
-            <h2>Áreas de Atuação em Porto Alegre</h2>
+            <h2>Áreas de Atuação em Porto Alegre e região metropolitana</h2>
             <div class="areas">
                 <div class="area-item">
-                    <h3>BPC/LOAS em Porto Alegre</h3>
+                    <h3>BPC/LOAS em Porto Alegre e região</h3>
                     <p>Ajudo idosos e pessoas com deficiência em Porto Alegre a conseguirem esse benefício essencial.</p>
                 </div>
                 <div class="area-item">
-                    <h3>Auxílio-Doença em Porto Alegre</h3>
+                    <h3>Auxílio Doença em Porto Alegre e região</h3>
                     <p>Suporte para quem precisa se afastar do trabalho por saúde na região de Porto Alegre.</p>
                 </div>
                 <div class="area-item">
-                    <h3>Aposentadoria em Porto Alegre</h3>
+                    <h3>Auxílio Acidente em Porto Alegre e região</h3>
+                    <p>Auxílio Acidente é um benefício de natureza indenizatória concedido ao segurado acidentado que retoma o trabalho, mas com capacidade reduzida na região de Porto Alegre.</p>
+                </div>
+                <div class="area-item">
+                    <h3>Aposentadoria em Porto Alegre e região</h3>
                     <p>Orientação para aposentadoria por invalidez ou tempo de contribuição em Porto Alegre.</p>
                 </div>
             </div>
