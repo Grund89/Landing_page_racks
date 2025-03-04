@@ -377,6 +377,112 @@
             justify-content: center; /* Centraliza o botão horizontalmente no texto */
             margin-top: 20px;
         }
+
+        .contato-section {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 40px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contato-content {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+
+        .contato-form, .contato-location {
+            width: 50%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .contato-form h2, .contato-location h2 {
+            color: #2c3e50;
+            font-family: 'Lora', serif;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .contato-form-fields input, .contato-form-fields textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .contato-form-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .contato-form-row input {
+            width: 50%;
+        }
+
+        .contato-form-fields textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .contato-button {
+            background-color: #27ae60;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .contato-button:hover {
+            background-color: #219653;
+        }
+
+        .location-map {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .location-map-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .map-link {
+            color: #27ae60;
+            text-decoration: none;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+        }
+
+        .map-link:hover {
+            text-decoration: underline;
+        }
+
+        .contato-location p {
+            color: #333;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            margin: 5px 0;
+            line-height: 1.6;
+        }
         @media (max-width: 768px) {
             .area-item {
                 width: 100%;
@@ -662,14 +768,36 @@
         </div>
 
         <!-- Formulário -->
-        <div class="section" id="contato">
-            <h2>Entre em Contato em Porto Alegre</h2>
-            <%= form_with url: "/contato", method: :post, local: true do %>
-                <input type="text" name="nome" placeholder="Seu Nome" required>
-                <input type="tel" name="telefone" placeholder="Seu Telefone" required>
-                <textarea name="mensagem" placeholder="Qual benefício você busca em Porto Alegre?" rows="4"></textarea>
-                <button type="submit">Enviar</button>
-            <% end %>
+        <div class="section contato-section" id="contato">
+            <div class="contato-content">
+                <div class="contato-form">
+                    <h2>Preencha o Formulário para Agendar uma Consulta</h2>
+                    <%= form_with url: "/contato", method: :post, local: true, class: "contato-form-fields" do %>
+                        <input type="text" name="nome" placeholder="Nome" required>
+                        <input type="text" name="endereco" placeholder="Endereço" required>
+                        <div class="contato-form-row">
+                            <input type="tel" name="telefone" placeholder="Telefone" required>
+                            <input type="email" name="email" placeholder="E-mail" required>
+                        </div>
+                        <textarea name="mensagem" placeholder="Mensagem" rows="4"></textarea>
+                        <button type="submit" class="contato-button">Enviar Formulário</button>
+                    <% end %>
+                </div>
+                <div class="contato-location">
+                    <h2>Onde Ficamos - Localizados</h2>
+                    <div class="location-map">
+                        <% if File.exist?(Rails.root.join('app', 'assets', 'images', 'mapa_porto_alegre.jpg')) %>
+                            <%= link_to image_tag("mapa_porto_alegre.jpg", alt: "Mapa de localização em Porto Alegre", class: "location-map-img"), "https://www.google.com/maps?q=Avenida+Diária+de+Notícias,+400,+sala+1310,+Bairro+Cristal,+Porto+Alegre+-+CEP+90810-080", target: "_blank" %>
+                        <% else %>
+                            <%= link_to image_tag("placeholder.jpg", alt: "Placeholder mapa de localização", class: "location-map-img"), "https://www.google.com/maps?q=Avenida+Diária+de+Notícias,+400,+sala+1310,+Bairro+Cristal,+Porto+Alegre+-+CEP+90810-080", target: "_blank" %>
+                        <% end %>
+                        <p><a href="https://www.google.com/maps?q=Avenida+Diária+de+Notícias,+400,+sala+1310,+Bairro+Cristal,+Porto+Alegre+-+CEP+90810-080" target="_blank" class="map-link">Ver mapa ampliado</a></p>
+                    </div>
+                    <p>📞 (51) 99195-0745</p>
+                    <p>✉️ raquelgrund@gmail.com</p>
+                    <p>📍 Avenida Diária de Notícias, 400, sala 1310, Bairro Cristal, Porto Alegre - CEP 90810-080.</p>
+                </div>
+            </div>
         </div>
 
         <!-- Rodapé -->
