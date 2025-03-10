@@ -580,6 +580,49 @@
             width: 24px;
             height: 24px;
         }
+
+        .thank-you-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1002;
+            text-align: center;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .thank-you-content h3 {
+            color: #2c3e50;
+            font-family: 'Lora', serif;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .thank-you-content p {
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .thank-you-content button {
+            background-color: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .thank-you-content button:hover {
+            background-color: #219653;
+        }
+
         @media (max-width: 768px) {
             .area-item {
                 width: 100%;
@@ -910,18 +953,18 @@
         <div class="section contato-section" id="contato">
             <div class="contato-content">
                 <div class="contato-form">
-                    <h2>Preencha o Formulário para Agendar uma Consulta</h2>
-                    <%= form_with url: "/contato", method: :post, local: true, class: "contato-form-fields" do %>
-                        <input type="text" name="nome" placeholder="Nome" required>
-                        <input type="text" name="endereco" placeholder="Endereço" required>
-                        <div class="contato-form-row">
-                            <input type="tel" name="telefone" placeholder="Telefone" required>
-                            <input type="email" name="email" placeholder="E-mail" required>
-                        </div>
-                        <textarea name="mensagem" placeholder="Mensagem" rows="4"></textarea>
-                        <button type="submit" class="contato-button">Enviar Formulário</button>
-                    <% end %>
-                </div>
+                <h2>Preencha o Formulário para Agendar uma Consulta</h2>
+                <%= form_with url: "/contato", method: :post, local: false, id: "contact-form", class: "contato-form-fields" do |form| %>
+                    <input type="text" name="nome" placeholder="Nome" required>
+                    <input type="text" name="endereco" placeholder="Endereço" required>
+                    <div class="contato-form-row">
+                        <input type="tel" name="telefone" placeholder="Telefone" required>
+                        <input type="email" name="email" placeholder="E-mail" required>
+                    </div>
+                    <textarea name="mensagem" placeholder="Mensagem" rows="4"></textarea>
+                    <button type="submit" class="contato-button">Enviar Formulário</button>
+                <% end %>
+            </div>
                 <div class="contato-location">
                     <h2>Onde Ficamos - Localizados</h2>
                     <div class="location-map">
@@ -993,6 +1036,15 @@
                 <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
             </svg>
         </a>
+    </div>
+
+    <!-- Pop-up de Agradecimento -->
+    <div id="thankYouPopup" class="thank-you-popup">
+        <div class="thank-you-content">
+            <h3>Obrigado pelo seu cadastro!</h3>
+            <p>Em breve um especialista entrará em contato!</p>
+            <button onclick="closeThankYouPopup()">Fechar</button>
+        </div>
     </div>
 </body>
 </html>

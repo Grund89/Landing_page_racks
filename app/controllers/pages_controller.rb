@@ -4,17 +4,23 @@ class PagesController < ApplicationController
   end
 
   def contato
-    # Aqui você pode processar o formulário
+    # Processa os dados do formulário
     nome = params[:nome]
+    endereco = params[:endereco]
     telefone = params[:telefone]
+    email = params[:email]
     mensagem = params[:mensagem]
 
-    # Exemplo: apenas exibe no console por agora
-    puts "Novo contato: #{nome}, #{telefone}, #{mensagem}"
+    # Exibe no console para depuração
+    puts "Novo contato: #{nome}, #{endereco}, #{telefone}, #{email}, #{mensagem}"
 
-    # Redireciona com mensagem de sucesso
-    flash[:notice] = "Obrigada pelo contato! Entrarei em contato em breve."
-    redirect_to root_path
+    # Valida os campos obrigatórios
+    if nome.present? && telefone.present? && email.present?
+      # Aqui você pode adicionar lógica para salvar os dados (ex.: em um banco de dados ou enviar e-mail)
+      render json: { success: true, message: "Obrigada pelo contato! Entrarei em contato em breve." }
+    else
+      render json: { success: false, error: "Por favor, preencha todos os campos obrigatórios (Nome, Telefone, E-mail)." }, status: :unprocessable_entity
+    end
   end
 
   def guia
