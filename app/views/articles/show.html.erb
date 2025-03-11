@@ -1,5 +1,6 @@
 <div class="container">
   <div class="article-wrapper">
+    <%= image_tag "acidente.jpg", alt: "Acidente-obra", class: "article-header-image" %>
     <h1 class="article-title"><%= @article.title %></h1>
 
     <div class="article-content">
@@ -196,6 +197,13 @@
 
   .back-button:hover {
     background-color: #1a252f;
+  }
+
+  .article-header-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    margin-bottom: 20px;
   }
 
   @media (max-width: 900px) {
