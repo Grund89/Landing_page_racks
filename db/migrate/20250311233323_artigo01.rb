@@ -1,4 +1,4 @@
-class AddPrimeiroArtigoAoBlog < ActiveRecord::Migration[7.0]
+class Artigo01 < ActiveRecord::Migration[7.0]
   def up
     Article.create(
       title: 'NÃO PERMITA QUE AS CONSEQUÊNCIAS DE UM ACIDENTE DE TRABALHO OU DE UMA DOENÇA RELACIONADA COMPROMETAM O SEU SUSTENTO!',
